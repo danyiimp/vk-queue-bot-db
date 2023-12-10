@@ -32,9 +32,4 @@ VK Queue Bot - это проект, предназначенный для фор
     - `mongo_uri`: URI для подключения к вашей базе данных MongoDB
     - `token`: токен для доступа к VK API
     - `group_id`: ID сообщества с ботом ВКонтакте
-4. В `app/__init__.py` определены DB константы, которые соответствуют структуре БД в MongoDB. Начальная структура пока создается вручную в БД :( 
-    - `data`: Database 
-      - `groups_queues`: Collection с очередями 
-      - `groups_admins`: Collection с администраторами 
-      - `groups_skips`: Collection с пропусками очередей 
-5. Запустите бота, используя `python main.py`
+4. Запустите бота, используя `python main.py`
