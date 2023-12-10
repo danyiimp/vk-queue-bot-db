@@ -10,4 +10,4 @@ ADD . /app
 RUN pip3 install --no-cache-dir -r requirements.txt
 
 # Run main.py when the container launches
-CMD ["python", "main.py"]
+CMD ["python", "bot.py"]
