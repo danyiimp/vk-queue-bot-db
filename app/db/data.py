@@ -70,7 +70,7 @@ def drop_queue(group_id: int, queue_name: str):
     res["queues"] = queues
     res_skips["queues"] = skips
     DB_GROUPS_QUEUES.update_one({"_id": group_id}, {"$set": res})
-    DB_GROUPS_SKIPS.update_one({"_id": group_id}, {"$set": skips})
+    DB_GROUPS_SKIPS.update_one({"_id": group_id}, {"$set": res_skips})
     return True
 
 def get_skips(group_id: int, queue_name: str) -> list:
