@@ -26,7 +26,7 @@ PEER_ID_OFFSET = 2000000000
 #TODO: FIX IT
 def add_default_admin(group_id, admin_id=_admin_id):
     try:
-        DB_GROUPS_ADMINS.insert_one({"_id": group_id, "admins": [admin_id]})
+        DB_GROUPS_ADMINS.insert_one({"_id": group_id, "admins": [int(admin_id)]})
     except:
         pass
 
