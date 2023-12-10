@@ -12,7 +12,7 @@ from app.functions import get_queues_keyboard, get_name_from_user_id
 end_labeler = BotLabeler()
 end_labeler.custom_rules["event_data"] = EventDataRule
 
-@end_labeler.message(command="ends")
+@end_labeler.message(command="end")
 async def end_handler(message: Message):
     group_id = message.peer_id - PEER_ID_OFFSET
 

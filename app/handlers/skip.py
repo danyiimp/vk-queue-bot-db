@@ -14,7 +14,7 @@ from app.functions import get_queues_keyboard, get_name_from_user_id
 skip_labeler = BotLabeler()
 skip_labeler.custom_rules["event_data"] = EventDataRule
 
-@skip_labeler.message(command="skips")
+@skip_labeler.message(command="skip")
 async def skip_handler(message: Message):
     group_id = message.peer_id - PEER_ID_OFFSET
 

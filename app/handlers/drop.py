@@ -12,7 +12,7 @@ drop_labeler.custom_rules["event_data"] = EventDataRule
 
 drop_message_id = None
 
-@drop_labeler.message(command="drops")
+@drop_labeler.message(command="drop")
 async def drop_handler(message: Message):
     global drop_message_id
     user_id = message.from_id
