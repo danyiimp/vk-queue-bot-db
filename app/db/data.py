@@ -60,13 +60,17 @@ def get_admins(group_id: int) -> list:
 
 def drop_queue(group_id: int, queue_name: str):
     res = DB_GROUPS_QUEUES.find_one({"_id": group_id})
+    res_skips = DB_GROUPS_SKIPS.find_one({"_id": group_id})
     queues = res["queues"]
+    skips = res_skips["queues"]
     if queue_name not in queues.keys():
         return False
     queues.pop(queue_name)
+    skips.pop(queue_name)
     res["queues"] = queues
+    res_skips["queues"] = skips
     DB_GROUPS_QUEUES.update_one({"_id": group_id}, {"$set": res})
-    DB_GROUPS_SKIPS.update_one({"_id": group_id}, {"$set": res})
+    DB_GROUPS_SKIPS.update_one({"_id": group_id}, {"$set": skips})
     return True
 
 def get_skips(group_id: int, queue_name: str) -> list:
