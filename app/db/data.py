@@ -2,6 +2,8 @@ from app import DB_GROUPS_QUEUES, DB_GROUPS_ADMINS, DB_GROUPS_SKIPS
 
 def get_queues_names(group_id: int) -> list:
     res = DB_GROUPS_QUEUES.find_one({"_id": group_id})
+    if res is None:
+        return None
     if len(res["queues"].keys()) == 0:
         return None
     names = res["queues"].keys()
